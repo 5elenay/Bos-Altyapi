@@ -10,9 +10,9 @@ from discord.ext import commands
 
 from fonksiyonlar.client import BotHakkinda
 
-client = commands.AutoShardedBot(command_prefix=BotHakkinda().Prefix(), intents=discord.Intents.all(), shard_count=1, cached_messages=50)
+client = commands.AutoShardedBot(command_prefix=BotHakkinda().Prefix(), intents=discord.Intents.all(), shard_count=1, max_messages=50)
 # intentleri açın, açmak istemiyorsanız "intents=discord.Intents.all()," kısmını silin
-# cached messages daha az ram kullanımı için, istemiyorsanız kaldırabilirsiniz
+# max messages daha az ram kullanımı için, istemiyorsanız kaldırabilirsiniz
 
 try:
     client.load_extension("cogs.Dinleyiciler")
